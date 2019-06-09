@@ -6,8 +6,14 @@ const app = express();
 app.use(express.static(path.join(__dirname, 'build')));
 
 app.get('/products', (req, res) => {
-	let url = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1';
-	fetch(url).then((response) => response.json()).then((contents) => console.log(contents));
+	const page = req.query.pages;
+	let url = `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${page}`;
+	fetch(url).then((response) => response.json()).then((contents) =>
+		res.send({
+			products: contents.products,
+			nextPage: contents.nextPage
+		})
+	);
 });
 
 app.get('*', (req, res) => {
