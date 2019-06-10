@@ -24,7 +24,7 @@ const Header = () => {
 					<Link to="/products">Seus produtos</Link>
 				</li>
 				<li>
-					<a href="/products/#share">Compartilhe</a>
+					<a href="/#share">Compartilhe</a>
 				</li>
 			</ul>
 		</header>
