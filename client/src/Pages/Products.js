@@ -11,7 +11,7 @@ const Products = () => {
 	};
 	useEffect(
 		() => {
-			fetch(`/products?pages=${page}`).then((response) => response.json()).then((contents) => {
+			fetch(`api/products?pages=${page}`).then((response) => response.json()).then((contents) => {
 				setProducts([ ...products, ...contents.products ]);
 			});
 		},

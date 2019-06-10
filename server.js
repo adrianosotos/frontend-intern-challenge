@@ -3,9 +3,9 @@ const fetch = require('node-fetch');
 const path = require('path');
 const app = express();
 
-app.use(express.static(path.join(__dirname, 'build')));
+app.use(express.static(path.join(__dirname, 'client/build')));
 
-app.get('/products', (req, res) => {
+app.get('/api/products', (req, res) => {
 	const page = req.query.pages;
 	let url = `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${page}`;
 	fetch(url).then((response) => response.json()).then((contents) =>
@@ -17,7 +17,7 @@ app.get('/products', (req, res) => {
 });
 
 app.get('*', (req, res) => {
-	res.sendFile(path.join(__dirname, 'build', 'index.html'));
+	res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
 
 app.listen(process.env.PORT || 8080, () => {
