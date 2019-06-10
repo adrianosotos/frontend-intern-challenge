@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import fetch from 'node-fetch';
+import Layout from '../Components/Layout';
+import ProductBox from '../Components/ProductBox';
 
 const Products = () => {
 	const [ products, setProducts ] = useState([]);
@@ -16,10 +18,11 @@ const Products = () => {
 		[ page ]
 	);
 	return (
-		<div>
-			{products.map((product) => <p>{product.name}</p>)}
-			<button onClick={loadProduct}>Load More</button>
-		</div>
+		<Layout>
+			<h1>Sua seleção especial</h1>
+			{products.map((product) => <ProductBox key={product.id} product={product} />)}
+			<button onClick={loadProduct}>Ainda mais produtos aqui</button>
+		</Layout>
 	);
 };
 
