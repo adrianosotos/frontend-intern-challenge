@@ -4,6 +4,9 @@ import { Link } from 'react-router-dom';
 const Header = () => {
 	return (
 		<header>
+			<p>uma seleção de produtos</p>
+			<p>especial para você</p>
+			<p>Todos os produtos desta lista foram selecionados a partir da sua navegação. Aproveite!</p>
 			<ul>
 				<li>
 					<a

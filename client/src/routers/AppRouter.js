@@ -12,7 +12,6 @@ const AppRouter = () => (
 			<Route path="/" exact={true} />
 			<Route path="/help" component={Help} />
 			<Route path="/products" component={Products} exact={true} />
-			<Route path="/products/:page" component={Products} />
 		</Switch>
 	</Router>
 );
