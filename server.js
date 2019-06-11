@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 app.get('/api/products', (req, res) => {
 	const page = req.query.pages;
-	let url = `https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=${page}`;
+	let url = `https://${page}`;
 	fetch(url).then((response) => response.json()).then((contents) =>
 		res.send({
 			products: contents.products,

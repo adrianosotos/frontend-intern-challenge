@@ -5,14 +5,17 @@ import ProductBox from '../Components/ProductBox';
 
 const Products = () => {
 	const [ products, setProducts ] = useState([]);
-	const [ page, setPage ] = useState(1);
+	const [ page, setPage ] = useState('frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1');
+	const [ nextPage, setNextPage ] = useState('');
 	const loadProduct = () => {
-		setPage(page + 1);
+		setPage(nextPage);
+		console.log(nextPage);
 	};
 	useEffect(
 		() => {
 			fetch(`api/products?pages=${page}`).then((response) => response.json()).then((contents) => {
 				setProducts([ ...products, ...contents.products ]);
+				setNextPage(contents.nextPage);
 			});
 		},
 		[ page ]
