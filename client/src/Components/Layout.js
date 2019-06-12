@@ -5,6 +5,11 @@ import Footer from './Footer';
 import SideDrawer from '../Components/Sidedrawer/SideDrawer';
 import Backdrop from '../Components/Backdrop';
 
+if (typeof window !== 'undefined') {
+	// eslint-disable-next-line global-require
+	require('smooth-scroll')('a[href*="#"]');
+}
+
 const Layout = ({ children }) => {
 	const [ sideDrawerOpen, setSideDrawerOpen ] = useState(false);
 
