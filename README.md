@@ -42,7 +42,7 @@ npm start
 
 ### Run the React UI
 
-This React app has a proxy configuration to handle backend requests to the local Node server. ()[`"proxy"` config](client/package.json)
+This React app has a proxy configuration to handle backend requests to the local Node server. [`"proxy"` config](client/package.json)
 
 
 Open a new terminal tab from the API server and start the UI:
