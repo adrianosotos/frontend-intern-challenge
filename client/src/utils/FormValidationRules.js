@@ -1,12 +1,12 @@
 const validate = (inputs) => {
 	let errors = {};
 	if (!inputs.email) {
-		errors.email = 'Email address is required';
+		errors.email = 'Favor inserir um e-mail';
 	} else if (!/\S+@\S+\.\S+/.test(inputs.email)) {
-		errors.email = 'Email address is invalid';
+		errors.email = 'E-mail invalido';
 	}
 	if (!inputs.name) {
-		errors.name = 'Name is required';
+		errors.name = 'Favor inserir um nome';
 	}
 	return errors;
 };

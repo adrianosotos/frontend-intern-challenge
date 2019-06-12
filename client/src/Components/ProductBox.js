@@ -2,15 +2,26 @@ import React from 'react';
 
 const ProductBox = ({ product }) => {
 	return (
-		<div>
-			<img src={product.image} alt="product" />
-			<p>{product.name}</p>
-			<p>{product.description}</p>
-			<p>De: {product.oldPrice}</p>
-			<p>Por: {product.price}</p>
-			<p>
-				ou {product.installments.count}x de {product.installments.value}
+		<div className="product-box">
+			<div className="product-box__img-container">
+				<img src={product.image} alt="product" />
+			</div>
+
+			<p className="product-box__title">{product.name}</p>
+			<p className="product-box__description">{product.description}</p>
+			<p className="product-box__old-price">
+				De: R${Number(product.oldPrice).toFixed(2).toString().replace('.', ',')}
 			</p>
+			<p className="product-box__new-price">
+				Por: R${Number(product.price).toFixed(2).toString().replace('.', ',')}
+			</p>
+			<p className="product-box__instalments">
+				ou {product.installments.count}x de R${Number(product.installments.value)
+					.toFixed(2)
+					.toString()
+					.replace('.', ',')}
+			</p>
+			<button className="product-box__buy-button">Comprar</button>
 		</div>
 	);
 };

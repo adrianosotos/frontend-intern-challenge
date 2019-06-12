@@ -1,0 +1,80 @@
+.shareForm__title {
+	color: $grey;
+	font-size: 18px;
+	text-align: center;
+	margin-bottom: 44px;
+	line-height: 16px;
+}
+
+.shareForm__text {
+	color: $grey;
+	font-size: 14px;
+	text-align: center;
+	margin-bottom: 39px;
+	line-height: 16px;
+}
+
+.shareForm__inputs {
+	display: flex;
+	float: row;
+	justify-content: center;
+	margin-bottom: 50px;
+	line-height: 16px;
+}
+
+.shareForm input {
+	border: 1px solid $dark-grey;
+	margin-right: 40px;
+	height: 30px;
+	width: 340px;
+}
+
+.shareForm label {
+	font-size: 12px;
+	color: $grey;
+	line-height: 14px;
+	margin-bottom: 7px;
+}
+
+.shareForm input,
+.shareForm label {
+	display: block;
+}
+
+.group {
+	display: inline-block;
+}
+
+.shareForm__button {
+	height: 39px;
+	width: 260px;
+	display: block;
+	margin: 4px auto 143px auto;
+	background: none;
+	border: 1px solid $dark-grey;
+	border-radius: 4px;
+	color: $grey;
+	cursor: pointer;
+	line-height: 16px;
+}
+
+.is-danger {
+	color: red;
+	font-size: 12px;
+	margin-top: 1px;
+	line-height: 14px;
+}
+
+@media (max-width: 800px) {
+	.shareForm__inputs {
+		display: flex;
+		flex-direction: column;
+	}
+	.group {
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.shareForm input {
+		margin: 0 0 10px 0;
+	}
+}

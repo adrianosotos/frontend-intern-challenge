@@ -22,9 +22,13 @@ const Products = () => {
 	);
 	return (
 		<Layout>
-			<h1>Sua seleção especial</h1>
-			{products.map((product) => <ProductBox key={product.id} product={product} />)}
-			<button onClick={loadProduct}>Ainda mais produtos aqui</button>
+			<h1 className="products__header">Sua seleção especial</h1>
+			<div className="products__grid-container">
+				{products.map((product) => <ProductBox key={product.id} product={product} />)}
+			</div>
+			<button className="products__load-more" onClick={loadProduct}>
+				Ainda mais produtos aqui
+			</button>
 		</Layout>
 	);
 };
